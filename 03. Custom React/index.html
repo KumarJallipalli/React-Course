@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Root node for CUstom React -->
+    <div id="root"></div>
+
+    <!-- Root Node for Actual React -->
+    <div id="main"></div>
+
+    <!-- // Loading custom react file -->
+    <script src="./customReact.js"></script>
+
+    <!-- // loading the actual react library using CDN's -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script>
+      // 1. create a react element to render & display
+      const h1 = React.createElement(
+        "h1",
+        {
+          id: "heading1",
+          style: {
+            color: "red",
+            backgroundColor: "yellow",
+          },
+        },
+        "Welcome to React JS"
+      );
+
+      console.log(h1);
+
+      // 2. Select a HTML element & create a Root Node out of it for ReactDOM
+      const main = ReactDOM.createRoot(document.getElementById("main"));
+
+      // inject the react element, renderit & display it
+      main.render(h1);
+    </script>
+  </body>
+</html>
