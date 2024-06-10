@@ -5,11 +5,11 @@
 
 Why Virtual DOM is needed..?
 
-- WKT, the browser takes in HTML document → transforms it to DOM —> Paints the DOM on the screen/page to users
-- DOM is a tree-like structure where each HTML element corresponds to a node in the tree
-- Whenever DOM detects change [ even minute chnages ] in the DOM tree it repaints the entire page using new version of DOM
-- Comparing the changes in DOM & only updating them is slower for browser than actually repainting the whole DOM
-- But these re-renders are prohibitively costly in terms of performance & is NOT Optimal
+    - WKT, the browser takes in HTML document → transforms it to DOM —> Paints the DOM on the screen/page to users
+    - DOM is a tree-like structure where each HTML element corresponds to a node in the tree
+    - Whenever DOM detects change [ even minute chnages ] in the DOM tree it repaints the entire page using new version of DOM
+    - Comparing the changes in DOM & only updating them is slower for browser than actually repainting the whole DOM
+    - But these re-renders are prohibitively costly in terms of performance & is NOT Optimal
 
 
         -->`createRoot()` → creates a DOM like structure in React
