@@ -1,49 +1,39 @@
-# 01. Intro [ 08/08/2025 ]
+# 02. React Project Setup [ 27/10/2025 ]
 
 ---
 
-<aside>
-💡
+## React Project Setup
 
-Pre-Requisites:
+- We can setup React in 2 Ways
+    1. Remote Project Setup using Code Sandbox → `react.new`
+    2. Local React Project Setup using Node & VS code
+- If we want to create a New React Project Locally,
+    - We need to Use some addition Tools [ like vite, parcel etc.. ]
 
-- Basic Understanding of JS, HTML & CSS
-</aside>
+## Why we need Additional Tools to Use React ?
 
-## What is React
+- Why can’t we use just plain HTML & JS files & link together ?
+    - React Code contains JSX
+    - This is NOT understood by Browser [ Since Browser is the one which executes our code ]
+    - This JSX code needs to be Transpiled in order to understand by Browser
+    - Hence we need Additional Tools
+- Moreover these Tools are called Build Tools → which helps to Optimize & improve the Performance
 
-- React is a JS Library
-- React is used to build User Interfaces [ i.e., Front End Application ]
-    - React is especially used to build SPA [ where performance & Responsiveness is Key ]
-- React focuses just on the view layer
+## What is Build Tool ?
 
-## What is SPA
+- **`build tool`** → Software that **automates the process of building/Transforming** the Source code into a final Executable/Deployable thing
+    - Building [ Build Process ] Involves
+        1. compiling
+        2. linking
+        3. packaging
+        4. Dependency Management
+        5. Testing
+        6. and sometimes deploying
+- Basically It automates the Build Process
+    - i.e., It Automates the Creation of Executable App from Source Code ( or )
+    - i.e., Transforms Source Code to Executable App
 
-- SPA → Single Page Applications
-- SPA → Application that loads Single HTML Page
-    - Navigation between "pages" & updates to contents happens Dynamically [ Using JS ] without reloading the entire page
-- Adv → When moving from one page to another, Application doesn’t reload [ NASA website (vs) React website ]
-- Concept
-    1. Initial Load → Browser loads one main HTML file [ plus JavaScript and CSS assets ]
-    2. Dynamic Content 
-        - Navigation between "pages" happens via **JavaScript [ V.IMP ]**
-        - JS updates parts of the page using data fetched from the server — without a full page refresh.
-    3. Client Side Routing
-        1. SPAs use **JavaScript-based routers** (like React Router) to switch views based on the URL
-        2. In doing so, It doesn’t request a new page from the Server
-
-## Key Features of React
-
-1. **Component-Based**
-    - Build UIs using **reusable components** that manage their own state.
-2. **Declarative**
-    - Define **what** the UI should look like && React updates it efficiently.
-3. **Virtual DOM**
-    - Uses a lightweight, in-memory DOM to update only what's needed — Making it fast
-4. **One-Way Data Flow [ Binding ]**
-    - Data flows **one direction [ parent → child ]**, making apps predictable and easier to debug.
-5. **JSX**
-    - A Syntax to Write **HTML-like code** directly in JavaScript [ for cleaner UI code ]
+---
 
 ## React Setup
 
@@ -64,12 +54,16 @@ React setup using `Vite`
 
 NOTE:
 
----
-
 - Instead of installing React Locally
 - We can use React without any Installation via `Vite` online setup
 - URL → [https://stackblitz.com/edit/vitejs-vite-s1ztzweh?file=index.html&terminal=dev](https://stackblitz.com/edit/vitejs-vite-s1ztzweh?file=index.html&terminal=dev)
 </aside>
+
+Why we will use `Vite`..?
+
+- Both `vite` & `parcel` are Frontend Build Tools [ recommended by React Officially ]
+    - It is Very Popular, customizable, Efficient & Extremely fast [ during both development & Building ] → Used in Large Projects
+    - Parcel is lightweight & zero-config→ used for light projects
 
 ## `Vite`
 
@@ -88,14 +82,6 @@ What is `Vite` ?
     - **Rollup** is a **JavaScript module bundler**
     - **bundler** is a tool that **takes many files** and **combines them into one or more optimized output files** — usually for use in a browser.
     - i.e., why `Vite` is Efficient for Production
-
-Why we will use `Vite`..?
-
-- Both `vite` & `parcel` are Frontend Build Tools [ recommended by React Officially ]
-    - It is Very Popular, customizable, Efficient & Extremely fast [ during both development & Building ] → Used in Large Projects
-    - Parcel is lightweight & zero-config→ used for light projects
-
----
 
 ## How HMR Works (Simplified)
 
