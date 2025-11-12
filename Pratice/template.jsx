@@ -1,20 +1,17 @@
-import { useState } from 'react';
-
 import { CORE_CONCEPTS } from './data';
 import Header from './components/Header';
 import CoreConcept from './components/CoreConcept';
 import TabButton from './components/TabButton';
 
-function App() {
-    const [tabContent, setTabContent] = useState('Press any Button to get Content');
+import { useState } from 'react';
 
+function App() {
+    const [ selectedButton, setSelectedButton ] = useState('Components');
     function handleSelect(selectedButton) {
-        setTabContent(selectedButton);
-        console.log('Button clicked:', tabContent);
+        setSelectedButton(selectedButton);
+        console.log('Button clicked:', selectedButton);
     }
 
-    console.log("App Component is Rendered");
-    
     return (
         <div>
             <Header />
