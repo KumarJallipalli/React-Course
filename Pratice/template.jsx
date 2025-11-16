@@ -1,48 +1,43 @@
-import HomeIcon from './HomeIcon';
-import PlusIcon from './PlusIcon';
-import './index.css'
+import { useState } from "react";
 
-function Button({ children, mode = 'filled', Icon, ...props }) {
-    let clsName = 'button';
+function Player({ name, symbol }) {
+    const [isEditing, setIsEditing] = useState(false);
+    const [playerName, setPlayerName] = useState(name);
+
+    function handleEditClick() {
+        // Toggling the isEditing state upon button click
+        setIsEditing((!isEditing));
+
+        // Logging the current isEditing state
+        console.log(isEditing);
+    }
+
+    // If we are in editing mode, save the name from input field
+    function handleChange(event) {
+        console.log("Input changed:", event.target.value);
+        setPlayerName(event.target.value);
+    }
+
+    // // Alternate way, To save the name from input field
+    // if (isEditing) {
+    //     const inputField = document.querySelector(`input.player-name`);
+    //     console.log("Saved name:", inputField.value);
+    //     console.log(inputField);
+    //     setPlayerName(inputField.value);
+    // }
 
     return (
-        <button className={clsName} {...props}>
-            {(Icon) ? <span className="button-icon"><Icon /></span> : null}
-            <span>{children}</span>
-        </button>
+        <li>
+            <span className="player">
+                {
+                    !isEditing ?
+                        <span className="player-name">{playerName}</span> :
+                        <input type="text" className="player-name" placeholder={playerName} onChange={handleChange} />
+                }
+                <span className="player-symbol">{symbol}</span>
+            </span>
+            {isEditing.toString()}
+            <button onClick={handleEditClick}>{isEditing ? "Save" : "Edit"}</button>
+        </li>
     )
 }
-
-
-function App() {
-    return (
-        <div id="app">
-            <section>
-                <h2>Buttons Should Support Any Props</h2>
-                <p>
-                    <Button mode="filled" disabled>
-                        Disabled
-                    </Button>
-                </p>
-                <p>
-                    <Button onClick={() => console.log('Clicked!')}>
-                    Click me</Button>
-                </p>
-            </section>
-
-            <section>
-                <h2>Button with Fevicons</h2>
-                <p>
-                    <Button Icon={HomeIcon}>Home</Button>
-                </p>
-                <p>
-                    <Button Icon={PlusIcon} mode="text">
-                        Add
-                    </Button>
-                </p>
-            </section>
-        </div>
-    );
-}
-
-export default App;
